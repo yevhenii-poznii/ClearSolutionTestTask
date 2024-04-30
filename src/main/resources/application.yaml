@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  servlet.context-path: /api/v1
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/users_database
+    username: postgres
+    password: root
+users:
+  minimum-age-constraint: 18

@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    container_name: users-database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: users_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - users-postgres-data:/var/lib/postgresql/data
+    networks:
+      - custom
+
+volumes:
+  users-postgres-data:
+    name: users-postgres-data
+
+networks:
+  custom:
+    driver: bridge
